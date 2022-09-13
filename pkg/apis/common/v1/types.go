@@ -84,7 +84,7 @@ type ReplicaSpec struct {
 	// Restart policy for all replicas within the job.
 	// One of Always, OnFailure, Never and ExitCode.
 	// Default to Never.
-	RestartPolicy RestartPolicy `json:"restartPolicy,omitempty" protobuf:"byets,3,opt,name=restartPolicy"`
+	RestartPolicy RestartPolicy `json:"restartPolicy,omitempty" protobuf:"bytes,3,opt,name=restartPolicy"`
 }
 
 // +k8s:openapi-gen=true
@@ -100,9 +100,9 @@ type JobCondition struct {
 	// A human readable message indicating details about the transition.
 	Message string `json:"message,omitempty" protobuf:"bytes,4,opt,name=message"`
 	// The last time this condition was updated.
-	LastUpdateTime metav1.Time `json:"lastUpdateTime,omitempty" protobuf:"bytes,5,opt,lastUpdateTime"`
+	LastUpdateTime metav1.Time `json:"lastUpdateTime,omitempty" protobuf:"bytes,5,opt,name=lastUpdateTime"`
 	// Last time the condition transitioned from one status to another.
-	LastTransitionTime metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,6,opt,lastTransitionTime"`
+	LastTransitionTime metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,6,opt,name=lastTransitionTime"`
 }
 
 // +k8s:openapi-gen=true

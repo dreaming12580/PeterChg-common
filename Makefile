@@ -22,8 +22,9 @@ pkg/apis/common/v1/generated.proto: $(GOPATH)/bin/go-to-protobuf $(PROTO_BINARIE
 
 	$(GOPATH)/bin/go-to-protobuf \
 		--go-header-file=./hack/boilerplate/boilerplate.go.txt  \
+		--output-base=. \
 		--packages=github.com/kubeflow/common/pkg/apis/common/v1 \
-		--apimachinery-packages=+k8s.io/apimachinery/pkg/util/intstr,+k8s.io/apimachinery/pkg/api/resource,k8s.io/apimachinery/pkg/runtime/schema,+k8s.io/apimachinery/pkg/runtime,k8s.io/apimachinery/pkg/apis/meta/v1,k8s.io/api/core/v1,k8s.io/api/policy/v1beta1,k8s.io/api/autoscaling/v2beta2 \
-		--proto-import $(GOPATH)/src \
+		--apimachinery-packages=+k8s.io/apimachinery/pkg/util/intstr,+k8s.io/apimachinery/pkg/api/resource,k8s.io/apimachinery/pkg/runtime/schema,+k8s.io/apimachinery/pkg/runtime,k8s.io/apimachinery/pkg/apis/meta/v1,k8s.io/api/core/v1,k8s.io/api/policy/v1beta1 \
+		--proto-import $(GOPATH)/src 
 	# Delete the link
 	touch pkg/apis/common/v1/generated.proto
